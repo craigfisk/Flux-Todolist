@@ -12,7 +12,7 @@ var todoActions = {
     AppDispatcher.handleAction({
       actionType: appConstants.REMOVE_ITEM,
       data: index
-    })
+    });
   }
 };
 

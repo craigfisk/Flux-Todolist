@@ -5,7 +5,7 @@ var List = React.createClass({
     var styles = {
       uList: {
         paddingLeft: 0,
-        listStyleType: "none"
+        listStyleType: 'none'
       },
       listGroup: {
         margin: '5px 0',
@@ -13,12 +13,12 @@ var List = React.createClass({
       },
       removeItem: {
         fontSize: 20,
-        float: "left",
-        position: "absolute",
+        float: 'left',
+        position: 'absolute',
         top: 12,
         left: 6,
-        cursor: "pointer",
-        color: "rgb(222, 79, 79)"
+        cursor: 'pointer',
+        color: 'rgb(222, 79, 79)'
       },
       todoItem: {
         paddingLeft: 20,
@@ -27,9 +27,9 @@ var List = React.createClass({
     };
     var listItems = this.props.items.map(function(item, index){
       return (
-        <li key={index} className="list-group-item" style={styles.listGroup}>
+        <li key={index} className='list-group-item' style={styles.listGroup}>
           <span
-            className="glyphicon glyphicon-remove"
+            className='glyphicon glyphicon-remove'
             style={styles.removeItem}
             onClick={this.props.remove.bind(null, index)}>
           </span>
@@ -37,13 +37,13 @@ var List = React.createClass({
             {item}
           </span>
         </li>
-      )
+      );
     }.bind(this));
     return (
       <ul style={styles.uList}>
         {listItems}
       </ul>
-    )
+    );
   }
 });
 

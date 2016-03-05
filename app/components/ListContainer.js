@@ -8,24 +8,27 @@ var ListContainer = React.createClass({
   getInitialState: function(){
     return {
       list: todoStore.getList()
-    }
+    };
   },
+  // local function uses todoStore function to pass a local function as callback
   componentDidMount: function(){
     todoStore.addChangeListener(this._onChange);
   },
   componentWillUnmount: function(){
     todoStore.removeChangeListener(this._onChange);
   },
+  // rather than setting state, we use store actions
   handleAddItem: function(newItem){
     todoActions.addItem(newItem);
   },
   handleRemoveItem: function(index){
     todoActions.removeItem(index);
   },
+  // cb
   _onChange: function(){
     this.setState({
       list: todoStore.getList()
-    })
+    });
   },
   render: function(){
     return (
@@ -36,7 +39,7 @@ var ListContainer = React.createClass({
           <List items={this.state.list} remove={this.handleRemoveItem}/>
         </div>
       </div>
-    )
+    );
   }
 });
 
